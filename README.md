@@ -10,7 +10,8 @@ This repository contains the complete codebase for:
 * QSAR model training for activity prediction
 * Molecular descriptor calculation and filtering
 
-# Repository Structure
+# Repository Structure 
+'
 ├── VEGFR2_autoregressive-scaled-conditional-tra...ipynb
 │   └── Main model building and training notebook
 │
@@ -28,7 +29,7 @@ This repository contains the complete codebase for:
 │
 └── README.md
     └── This file
-
+'
 # Data Preparation
 ## 1. Download MOSES Dataset
 ```
@@ -37,13 +38,13 @@ wget https://github.com/molecularsets/moses/raw/master/data/test.csv
 ```
 
 ## 2. Calculate Molecular Descriptors
-Run descriptors_for_MOSES_Test.ipynb to:
+Run 'descriptors_for_MOSES_Test.ipynb' to:
 * Parse SELFIES/SMILES strings
 * Calculate descriptors using RDKit and Mordred
 * Output descriptor matrices for downstream use
 
 ## 3. Filter Descriptors
-Run filter_descriptors.ipynb to:
+Run 'filter_descriptors.ipynb' to:
 * Remove non-numeric and duplicate features
 * Eliminate highly correlated descriptors (>0.95)
 * Normalize using Min-Max scaling
@@ -51,7 +52,7 @@ Run filter_descriptors.ipynb to:
 
 # Training the Model
 ## 1. Training ChemTrans-CVAE
-Run VEGFR2_autoregressive-scaled-conditional-transformers-vae.py to:
+Run 'VEGFR2_autoregressive-scaled-conditional-transformers-vae.py' to:
 * Build the encoder (pre-trained Transformer + descriptor conditioning)
 * Build the decoder (autoregressive Transformer with memory conditioning)
 * Pre-train on MOSES dataset
@@ -59,14 +60,14 @@ Run VEGFR2_autoregressive-scaled-conditional-transformers-vae.py to:
 * Loss function: L_total = L_recon + β·L_KL
 
 ## 2. QSAR Model Training
-Run QSAR-vegfr-2.ipynb to:
+Run 'QSAR-vegfr-2.ipynb' to:
 * Train on 13,406 compounds (12,400 train / 1,006 test)
 * Use 234 curated descriptors (variance > 0.01)
 * Multi-feature fusion: Transformer embeddings + Morgan fingerprints + MACCS keys + descriptors
 * Training objective: MSE loss for pIC50 prediction
 
 # Generating Molecules
-After training, use ChemTrans_CVAE_Model_ipynb to:
+After training, use 'ChemTrans_CVAE_Model_.ipynb' to:
 1. Load Model and Checkpoint
 2. Generate New Molecules
   - Configure sampling parameters:
