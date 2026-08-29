@@ -10,26 +10,7 @@ This repository contains the complete codebase for:
 * QSAR model training for activity prediction
 * Molecular descriptor calculation and filtering
 
-# Repository Structure 
-`
-├── VEGFR2_autoregressive-scaled-conditional-tra...ipynb
-│   └── Main model building and training notebook
-│
-├── ChemTrans_CVAE_Model_ipynb
-│   └── Load trained model and generate new molecules
-│
-├── QSAR-vegfr-2.ipynb
-│   └── QSAR model training for VEGFR-2 activity prediction
-│
-├── descriptors_for_MOSES_Test.ipynb
-│   └── Calculating molecular descriptors using RDKit and Mordred
-│
-├── filter_descriptors.ipynb
-│   └── Descriptor filtering pipeline (correlation, variance, normalization)
-│
-└── README.md
-    └── This file
-`
+
 # Data Preparation
 ## 1. Download MOSES Dataset
 ```
